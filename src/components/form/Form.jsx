@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
 import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
-import { selectContacts } from 'redux/selectors';
 import { useState } from 'react';
+import { addContact } from 'redux/operations';
+import { getContacts } from 'redux/selectors';
 
 Notiflix.Notify.init({
   width: '320px',
@@ -12,7 +12,7 @@ Notiflix.Notify.init({
 });
 
 export function Form() {
-  const contacts = useSelector(selectContacts);
+  const { contacts } = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');

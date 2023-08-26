@@ -1,8 +1,14 @@
 .contactItem {
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 10px;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.contactNumber {
+  margin-right: auto;
 }
 
 .deleteButton {
