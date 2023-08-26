@@ -2,13 +2,15 @@ import { Form } from './form/Form';
 import { Filter } from './filter/Filter';
 import { ContactList } from './contactList/ContactList';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 
 export function App() {
   const dispatch = useDispatch();
-  const { contacts, isLoading, error } = useSelector(getContacts);
+  const  contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const  error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
